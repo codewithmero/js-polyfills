@@ -1,7 +1,10 @@
 // resolved all the pending promises at once (they'd either be resolved or rejected!)
 function asyncProvider(time) {
     return new Promise((resolve, reject) => {
-        resolve(time);
+        if(time === 2000)
+            reject(time);
+        else
+            resolve(time);
     });
 }
 
